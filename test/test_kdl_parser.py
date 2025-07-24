@@ -15,19 +15,16 @@
 # limitations under the License.
 
 import os
-import sys
+
+import unittest
 
 import kdl_parser_py.urdf
-import unittest
-from ament_index_python.packages import get_package_share_directory
 
-PKG = "kdl_parser_py"
 
 class TestKdlParser(unittest.TestCase):
-    def runTest(self):
-        package_dir = get_package_share_directory(PKG)
 
-        filename  = os.path.join(package_dir, 'test.urdf')
+    def runTest(self):
+        filename = os.path.join(os.path.dirname(__file__), 'test.urdf')
         (ok, tree) = kdl_parser_py.urdf.treeFromFile(filename)
         self.assertTrue(ok)
         # KDL doesn't count fixed joints (since they aren't kinematic)
@@ -44,6 +41,7 @@ class TestKdlParser(unittest.TestCase):
 
         inertia = chain.getSegment(1).getInertia()
         self.assertAlmostEqual(inertia.getCOG().z(), 3.0)
+
 
 if __name__ == '__main__':
     unittest.main()
