@@ -2,8 +2,8 @@
 Changelog for package kdl_parser_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2025-07-29)
+------------------
 * Port kdl_parser_py to ros2 (`#3 <https://github.com/ros/kdl_parser_py/issues/3>`_)
 * Rearrange repository to put kdl_parser_py at the top level. (`#1 <https://github.com/ros/kdl_parser_py/issues/1>`_)
 * Contributors: Adrian Zwiener, Chris Lalancette, Daniel Reuter
